@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "app/frontend", "use": "@vercel/static" },
+      { "src": "app/backend", "use": "@vercel/node" },
+      { "src": "app/mobile", "use": "build" }
+    ],
+    "routes": [
+      { "src": "/frontend/(.*)", "dest": "app/frontend/$1" },
+      { "src": "/backend/(.*)", "dest": "app/backend/$1" },
+      { "src": "/mobile/(.*)", "dest": "app/mobile/$1" }
+    ]
+  }
+  

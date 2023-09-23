@@ -1,0 +1,28 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kevinDsousa/CVregistration",
+  "author": "kevin <kevindiegodasilvasousa@gmail.com>",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "./app/frontend",
+      "./app/backend"
+    ],
+    "nohoist": [
+      "**"
+    ]
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^7.0.0",
+    "eslint-config-custom": "*",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "private": true
+}
