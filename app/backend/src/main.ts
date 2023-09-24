@@ -14,7 +14,7 @@ async function bootstrap() {
   );
   const config = new DocumentBuilder()
     .setTitle('Cadastros de candidatos')
-    .setDescription('Api de cadastros')
+    .setDescription('Api de cadastros curriculares')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);
