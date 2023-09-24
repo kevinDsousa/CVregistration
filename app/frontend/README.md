@@ -1,27 +1,82 @@
-# Frontend
+<p align="center" ><img src=".././img/frontend.png" width="500px" /></p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+---
 
-## Development server
+# Descrição
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Conforme informado no README principal do projeto, aqui você encontrará todas as orientações necessárias para rodar a aplicação.
+<br/><br/>
 
-## Code scaffolding
+# Inicio
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<details>
+<summary>
+Instruções sobre como configurar seu ambiente de desenvolvimento.
+</summary>
 
-## Build
+###
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Ferramentas](#ferramentas)
+- [Pre-requisitos](#pre-requisitos)
+- [Instalação](#instalação)
+- [Instalação de dependências](#instalação-de-dependências)
+- [Uso](#Uso)
 
-## Running unit tests
+</details>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<br/>
 
-## Running end-to-end tests
+## Ferramentas
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Este projeto foi criado usando:
 
-## Further help
+<p>
+<a href="https://code.visualstudio.com"><img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" /></a>
+<a href="https://ubuntu.com"><img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" /></a>
+<a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" /></a>
+<a href="https://storybook.js.org"><img src="https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white" /></a>
+</p>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<p align="right">(<a href="#iniciar">top</a>)</p>
+
+## Pre-requisitos
+
+Para instalar as ferramentas em seu ambiente de desenvolvimento local, você precisará ter o NPM instalado. Para instalar a versão estável mais recente do NPM, execute na linha de comando:
+
+```npm install npm@latest -g```
+
+<p align="right">(<a href="#iniciar">top</a>)</p>
+
+## Instalação
+
+Clone o repositório:
+
+```git clone https://github.com/kevinDsousa/CVregistration.git```
+
+<p align="right">(<a href="#iniciar">top</a>)</p>
+
+### Instalação de dependências
+
+Dentro do projeto pase realize o comando `yarn` para baixar a node modules dos 3 projetos
+
+# Uso
+
+Para inicializar o projeto
+
+```yarn dev```
+
+A tela inicial será aberta (conforme imagem abaixo) e você poderá utilizar o sistema localmente.
+
+Features [click here](/README.md).
+
+<p align="right">(<a href="#inicio">top</a>)</p>
+
+# Versão
+
+Versçao desta aplicação ```version 1.0.0```
+
+<p align="right">(<a href="#inicio">top</a>)</p>
+
+# Backend
+
+[Backend, clique aqui](../backend/README.md).
