@@ -24,5 +24,6 @@
     "prettier": "latest",
     "turbo": "latest"
   },
-  "private": true
+  "private": true,
+  "packageManager": "yarn@1.22.19"
 }
