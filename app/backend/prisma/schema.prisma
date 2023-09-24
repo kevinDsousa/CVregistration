@@ -18,21 +18,26 @@ model users {
 
   cv   cvs @relation(fields: [idcv], references: [id])
   idcv Int
+
+  skills  skills @relation(fields: [idskill], references: [id])
+  idskill Int
+
+  @@map("users")
 }
 
 model skills {
-  id        Int    @id @default(autoincrement())
+  id        Int     @id @default(autoincrement())
   nameSkill String
+  users     users[]
 
-  cvs cvs[]
+  @@map("skills")
 }
 
 model cvs {
-  id      Int    @id @default(autoincrement())
+  id      Int     @id @default(autoincrement())
   vacancy String
+  company String
+  users   users[]
 
-  skill   skills @relation(fields: [idSkill], references: [id])
-  idSkill Int
-
-  users users[]
+  @@map("curriculum")
 }

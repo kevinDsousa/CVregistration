@@ -8,9 +8,6 @@ import {
 } from 'class-validator';
 
 export class CreateUserDto {
-  @IsNumber()
-  id: number;
-
   @ApiProperty({
     description: 'nome do usuário',
     example: 'Kevin diego da silva sousa',
@@ -40,4 +37,7 @@ export class CreateUserDto {
 
   @IsNumber()
   idcv: number;
+
+  @IsNumber()
+  idskill: number;
 }

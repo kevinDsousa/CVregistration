@@ -6,4 +6,5 @@ export class UserEntity implements users {
   email: string;
   birday: Date;
   idcv: number;
+  idskill: number;
 }

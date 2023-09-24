@@ -1,5 +1,5 @@
 export class CurriculoEntity {
   id: number;
   vacancy: string;
-  idSkill: number;
+  company: string;
 }

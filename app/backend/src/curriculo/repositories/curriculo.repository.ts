@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
-import { CreateCurriculoDto } from '../dto/create-curriculo.dto';
 import { UpdateCurriculoDto } from '../dto/update-curriculo.dto';
+import { CreateCurriculoDto } from '../dto/create-curriculo.dto';
 import { CurriculoEntity } from '../entities/curriculo.entity';
 
 @Injectable()
