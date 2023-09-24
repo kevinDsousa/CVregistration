@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { HomeComponent } from './home.component';
+import { HeaderComponent } from './header.component';
 
-const meta: Meta<HomeComponent> = {
-  title: 'Exemplo Home',
-  component: HomeComponent,
+const meta: Meta<HeaderComponent> = {
+  title: 'Template/Header',
+  component: HeaderComponent,
   tags: ['autodocs'],
-  render: (args: HomeComponent) => ({
+  render: (args: HeaderComponent) => ({
     props: {
       backgroundColor: null,
       ...args,
@@ -19,7 +19,7 @@ const meta: Meta<HomeComponent> = {
 }
 
 export default meta;
-type Story = StoryObj<HomeComponent>;
+type Story = StoryObj<HeaderComponent>;
 
 export const Default_Header: Story = {
   args: {}

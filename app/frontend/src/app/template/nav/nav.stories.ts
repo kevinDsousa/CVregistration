@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { FooterComponent } from './footer.component';
+import { NavComponent } from './nav.component';
 
-const meta: Meta<FooterComponent> = {
-  title: 'Exemplo Footer',
-  component: FooterComponent,
+const meta: Meta<NavComponent> = {
+  title: 'Template/Nav',
+  component: NavComponent,
   tags: ['autodocs'],
-  render: (args: FooterComponent) => ({
+  render: (args: NavComponent) => ({
     props: {
       backgroundColor: null,
       ...args,
@@ -19,7 +19,7 @@ const meta: Meta<FooterComponent> = {
 }
 
 export default meta;
-type Story = StoryObj<FooterComponent>;
+type Story = StoryObj<NavComponent>;
 
 export const Default_Header: Story = {
   args: {}

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { NavComponent } from './nav.component';
+import { HomeComponent } from './home.component';
 
-const meta: Meta<NavComponent> = {
-  title: 'Exemplo Nav',
-  component: NavComponent,
+const meta: Meta<HomeComponent> = {
+  title: 'View/Home',
+  component: HomeComponent,
   tags: ['autodocs'],
-  render: (args: NavComponent) => ({
+  render: (args: HomeComponent) => ({
     props: {
       backgroundColor: null,
       ...args,
@@ -19,7 +19,7 @@ const meta: Meta<NavComponent> = {
 }
 
 export default meta;
-type Story = StoryObj<NavComponent>;
+type Story = StoryObj<HomeComponent>;
 
 export const Default_Header: Story = {
   args: {}

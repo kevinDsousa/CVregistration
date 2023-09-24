@@ -1,16 +1,22 @@
 .header {
   display: flex;
   align-items: center;
+  padding: 5px 5px;
+  background-color: #313131;
+  padding-bottom: 10px;
+  height: 80px;
 }
 
 .header a {
+  padding-left: 10px;
   display: flex;
   align-items: center;
   text-decoration: none;
 }
 
 .header .logo {
-  max-width: 32px;
+  max-width: 70px;
+  border-radius:  50%;
 }
 
 .header .title-group {

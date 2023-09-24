@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { HeaderComponent } from './header.component';
+import { RegistercvComponent } from './registercv.component';
 
-const meta: Meta<HeaderComponent> = {
-  title: 'Exemplo Header',
-  component: HeaderComponent,
+const meta: Meta<RegistercvComponent> = {
+  title: 'View/Register',
+  component: RegistercvComponent,
   tags: ['autodocs'],
-  render: (args: HeaderComponent) => ({
+  render: (args: RegistercvComponent) => ({
     props: {
       backgroundColor: null,
       ...args,
@@ -19,7 +19,7 @@ const meta: Meta<HeaderComponent> = {
 }
 
 export default meta;
-type Story = StoryObj<HeaderComponent>;
+type Story = StoryObj<RegistercvComponent>;
 
 export const Default_Header: Story = {
   args: {}
