@@ -2,7 +2,7 @@
 
 ---
 
-# Description
+# Descrição
 
 CvRegistration é um software para manipulação de curriculos tanto para um usuário administrador como para um usuário candidato.
 
@@ -17,7 +17,6 @@ Sumário para uso da aplicação
 
 ###
 
-- [Como usar](#como-usar)
 - [Como gerenciar](#como-gerenciar)
 - [Configuração inicial](#configuração-inicial)
 - [Instalação e especificações](#instalação-e-especificações)
@@ -28,12 +27,6 @@ Sumário para uso da aplicação
 - [Agradecimentos](#thanks)
 
 </details>
-
-
-
-## Como usar
-
-<p align="left" ><img src="/img/users.png" width="300px" /></p>
 
 #### Cadastrar novo usuário: 
 
@@ -80,7 +73,7 @@ Alguma duvida referente a instalação e funcionamento do sistema podera ser cri
 
 <p align="right">(<a href="#features">top</a>)</p>
 
-# Contributors
+# Contribuidor
 
 This project exists thanks to the contribution of these people:
 
@@ -91,13 +84,13 @@ This project exists thanks to the contribution of these people:
 
 <p align="right">(<a href="#features">top</a>)</p>
 
-# License
+# Licença
 
 Este projeto esta sob licença do MIT <a href="https://github.com/HackathonTeam05/Guardian/blob/main/LICENSE">LICENSE.md</a> file.
 
 <p align="right">(<a href="#features">top</a>)</p>
 
-# Thanks
+# Agradecimentos
 
 Agradecimentos pela equipe da [Diamond Solutions](https://www.linkedin.com/company/diamonds-solutions/) pelo desafio proposto. 👩🥳🙏🎉
 
