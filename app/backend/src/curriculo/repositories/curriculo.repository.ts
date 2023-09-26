@@ -11,40 +11,81 @@ export class CurriculoRepository {
   async create(
     createCurriculoDto: CreateCurriculoDto,
   ): Promise<CurriculoEntity> {
-    return this.prisma.cvs.create({
-      data: createCurriculoDto,
-    });
+    try {
+      return await this.prisma.cvs.create({
+        data: createCurriculoDto,
+      });
+    } catch (error) {
+      throw new Error('Falha ao criar o currículo.');
+    }
   }
 
   async findAll(): Promise<CurriculoEntity[]> {
-    return this.prisma.cvs.findMany();
+    try {
+      return await this.prisma.cvs.findMany({
+        include: {
+          user: {
+            select: {
+              id: true,
+              name: true,
+              email: true,
+              cpf: true,
+              phone: true,
+              birday: true,
+              education: true,
+              admin: true,
+              createdAt: true,
+              skills: {
+                select: {
+                  nameSkill: true,
+                },
+              },
+            },
+          },
+        },
+      });
+    } catch (error) {
+      throw new Error('Falha ao buscar os currículos.');
+    }
   }
 
   async findOne(id: number): Promise<CurriculoEntity> {
-    return this.prisma.cvs.findUnique({
-      where: {
-        id,
-      },
-    });
+    try {
+      return await this.prisma.cvs.findUnique({
+        where: {
+          id,
+        },
+      });
+    } catch (error) {
+      throw new Error('Falha ao buscar o currículo pelo ID.');
+    }
   }
 
   async update(
     id: number,
     updateCurriculoDto: UpdateCurriculoDto,
   ): Promise<CurriculoEntity> {
-    return this.prisma.cvs.update({
-      where: {
-        id,
-      },
-      data: updateCurriculoDto,
-    });
+    try {
+      return await this.prisma.cvs.update({
+        where: {
+          id,
+        },
+        data: updateCurriculoDto,
+      });
+    } catch (error) {
+      throw new Error('Falha ao atualizar o currículo.');
+    }
   }
 
   async remove(id: number): Promise<CurriculoEntity> {
-    return this.prisma.cvs.delete({
-      where: {
-        id,
-      },
-    });
+    try {
+      return await this.prisma.cvs.delete({
+        where: {
+          id,
+        },
+      });
+    } catch (error) {
+      throw new Error('Falha ao excluir o currículo.');
+    }
   }
 }

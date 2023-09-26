@@ -14,7 +14,7 @@ export class ButtonComponent {
 
   /**
    * Cor de fundo do botão
-   */
+  */
   @Input()
   backgroundColor?: string;
 
@@ -26,13 +26,18 @@ export class ButtonComponent {
 
   /**
    * Texto do botão
-   */
+  */
+  @Input()
   textBtn: string | undefined;
 
   /**
    * Evento de click opcional
-   */
+  */
   @Output()
   onClick = new EventEmitter<Event>();
+
+  handleClick() {
+    console.log('teste');
+  }
 
 }

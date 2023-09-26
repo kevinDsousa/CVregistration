@@ -9,37 +9,61 @@ export class UsersRepository {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(createUserDto: CreateUserDto): Promise<UserEntity> {
-    return this.prisma.users.create({
-      data: createUserDto,
-    });
+    try {
+      return await this.prisma.users.create({
+        data: createUserDto,
+      });
+    } catch (error) {
+      throw new Error('Falha ao criar o usuário.');
+    }
   }
 
   async findAll(): Promise<UserEntity[]> {
-    return this.prisma.users.findMany();
+    try {
+      return await this.prisma.users.findMany({
+        include: {
+          skills: true,
+        },
+      });
+    } catch (error) {
+      throw new Error('Falha ao buscar os usuários.');
+    }
   }
 
   async findOne(id: number): Promise<UserEntity> {
-    return this.prisma.users.findUnique({
-      where: {
-        id,
-      },
-    });
+    try {
+      return await this.prisma.users.findUnique({
+        where: {
+          id,
+        },
+      });
+    } catch (error) {
+      throw new Error('Falha ao buscar o usuário pelo ID.');
+    }
   }
 
   async update(id: number, updateUserDto: UpdateUserDto): Promise<UserEntity> {
-    return this.prisma.users.update({
-      where: {
-        id,
-      },
-      data: updateUserDto,
-    });
+    try {
+      return await this.prisma.users.update({
+        where: {
+          id,
+        },
+        data: updateUserDto,
+      });
+    } catch (error) {
+      throw new Error('Falha ao atualizar o usuário.');
+    }
   }
 
   async remove(id: number): Promise<UserEntity> {
-    return this.prisma.users.delete({
-      where: {
-        id,
-      },
-    });
+    try {
+      return await this.prisma.users.delete({
+        where: {
+          id,
+        },
+      });
+    } catch (error) {
+      throw new Error('Falha ao excluir o usuário.');
+    }
   }
 }

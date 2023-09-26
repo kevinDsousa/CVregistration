@@ -485,7 +485,7 @@
                 "name": "Default_Header",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/template/footer/footer.stories.ts",
+                "file": "src/app/template/header/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -495,7 +495,7 @@
                 "name": "Default_Header",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/template/header/header.stories.ts",
+                "file": "src/app/template/footer/footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -555,21 +555,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/template/footer/footer.stories.ts",
+                "file": "src/app/template/header/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<FooterComponent>",
-                "defaultValue": "{\n  title: 'Exemplo Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n  render: (args: FooterComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
+                "type": "Meta<HeaderComponent>",
+                "defaultValue": "{\n  title: 'Template/Header',\n  component: HeaderComponent,\n  tags: ['autodocs'],\n  render: (args: HeaderComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/template/header/header.stories.ts",
+                "file": "src/app/template/footer/footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\n  title: 'Exemplo Header',\n  component: HeaderComponent,\n  tags: ['autodocs'],\n  render: (args: HeaderComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
+                "type": "Meta<FooterComponent>",
+                "defaultValue": "{\n  title: 'Template/Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n  render: (args: FooterComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
             },
             {
                 "name": "meta",
@@ -579,7 +579,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<NavComponent>",
-                "defaultValue": "{\n  title: 'Exemplo Nav',\n  component: NavComponent,\n  tags: ['autodocs'],\n  render: (args: NavComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
+                "defaultValue": "{\n  title: 'Template/Nav',\n  component: NavComponent,\n  tags: ['autodocs'],\n  render: (args: NavComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
             },
             {
                 "name": "meta",
@@ -589,7 +589,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HomeComponent>",
-                "defaultValue": "{\n  title: 'Exemplo Home',\n  component: HomeComponent,\n  tags: ['autodocs'],\n  render: (args: HomeComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
+                "defaultValue": "{\n  title: 'View/Home',\n  component: HomeComponent,\n  tags: ['autodocs'],\n  render: (args: HomeComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
             },
             {
                 "name": "meta",
@@ -599,7 +599,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<RegistercvComponent>",
-                "defaultValue": "{\n  title: 'Exemplo Register',\n  component: RegistercvComponent,\n  tags: ['autodocs'],\n  render: (args: RegistercvComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
+                "defaultValue": "{\n  title: 'View/Register',\n  component: RegistercvComponent,\n  tags: ['autodocs'],\n  render: (args: RegistercvComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
             },
             {
                 "name": "preview",
@@ -659,8 +659,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<FooterComponent>",
-                "file": "src/app/template/footer/footer.stories.ts",
+                "rawtype": "StoryObj<HeaderComponent>",
+                "file": "src/app/template/header/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -670,8 +670,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderComponent>",
-                "file": "src/app/template/header/header.stories.ts",
+                "rawtype": "StoryObj<FooterComponent>",
+                "file": "src/app/template/footer/footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -713,28 +713,6 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "src/app/template/footer/footer.stories.ts": [
-                {
-                    "name": "Default_Header",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/template/footer/footer.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {}\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/template/footer/footer.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<FooterComponent>",
-                    "defaultValue": "{\n  title: 'Exemplo Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n  render: (args: FooterComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
-                }
-            ],
             "src/app/template/header/header.stories.ts": [
                 {
                     "name": "Default_Header",
@@ -754,7 +732,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\n  title: 'Exemplo Header',\n  component: HeaderComponent,\n  tags: ['autodocs'],\n  render: (args: HeaderComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
+                    "defaultValue": "{\n  title: 'Template/Header',\n  component: HeaderComponent,\n  tags: ['autodocs'],\n  render: (args: HeaderComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
+                }
+            ],
+            "src/app/template/footer/footer.stories.ts": [
+                {
+                    "name": "Default_Header",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/template/footer/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {}\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/template/footer/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<FooterComponent>",
+                    "defaultValue": "{\n  title: 'Template/Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n  render: (args: FooterComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
                 }
             ],
             "src/app/template/nav/nav.stories.ts": [
@@ -776,7 +776,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<NavComponent>",
-                    "defaultValue": "{\n  title: 'Exemplo Nav',\n  component: NavComponent,\n  tags: ['autodocs'],\n  render: (args: NavComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
+                    "defaultValue": "{\n  title: 'Template/Nav',\n  component: NavComponent,\n  tags: ['autodocs'],\n  render: (args: NavComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
                 }
             ],
             "src/app/views/home/home.stories.ts": [
@@ -798,7 +798,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HomeComponent>",
-                    "defaultValue": "{\n  title: 'Exemplo Home',\n  component: HomeComponent,\n  tags: ['autodocs'],\n  render: (args: HomeComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
+                    "defaultValue": "{\n  title: 'View/Home',\n  component: HomeComponent,\n  tags: ['autodocs'],\n  render: (args: HomeComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
                 }
             ],
             "src/app/views/registercv/registercv.stories.ts": [
@@ -820,7 +820,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<RegistercvComponent>",
-                    "defaultValue": "{\n  title: 'Exemplo Register',\n  component: RegistercvComponent,\n  tags: ['autodocs'],\n  render: (args: RegistercvComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
+                    "defaultValue": "{\n  title: 'View/Register',\n  component: RegistercvComponent,\n  tags: ['autodocs'],\n  render: (args: RegistercvComponent) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  }\n}"
                 }
             ],
             "src/app/components/button/button.stories.ts": [
@@ -904,19 +904,6 @@
                     "kind": 180
                 }
             ],
-            "src/app/template/footer/footer.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<FooterComponent>",
-                    "file": "src/app/template/footer/footer.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
             "src/app/template/header/header.stories.ts": [
                 {
                     "name": "Story",
@@ -924,6 +911,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<HeaderComponent>",
                     "file": "src/app/template/header/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "src/app/template/footer/footer.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<FooterComponent>",
+                    "file": "src/app/template/footer/footer.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

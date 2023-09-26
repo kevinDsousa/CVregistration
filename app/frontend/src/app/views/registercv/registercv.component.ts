@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-registercv',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./registercv.component.css']
 })
 export class RegistercvComponent {
+  constructor(private router: Router) {}
 
+  navigateToCreateCV(): void {
+    console.log();
+  }
 }

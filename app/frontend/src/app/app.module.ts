@@ -13,6 +13,7 @@ import { NavComponent } from './template/nav/nav.component'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatCardModule } from '@angular/material/card'
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './views/home/home.component';
 import { RegistercvComponent } from './views/registercv/registercv.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -34,7 +35,8 @@ import { ButtonComponent } from './components/button/button.component';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

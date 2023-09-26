@@ -1,5 +1,6 @@
 export class CurriculoEntity {
   id: number;
   vacancy: string;
-  company: string;
+  iduser: number;
+  createdAt: Date;
 }
