@@ -49,6 +49,6 @@ export class UserService {
    * @returns Retorna em caso positivo um objeto que foi deletado ou lança um erro em caso negativo
    */
   remove(id: number) {
-    return this.remove(id);
+    return this.repository.remove(id);
   }
 }

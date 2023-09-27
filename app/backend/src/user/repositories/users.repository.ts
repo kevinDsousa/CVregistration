@@ -3,6 +3,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { UserEntity } from '../entities/user.entity';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
+import { DatabaseError } from 'src/common/erros/types/DataBaseError';
 
 @Injectable()
 export class UsersRepository {
@@ -14,9 +15,31 @@ export class UsersRepository {
         data: createUserDto,
       });
     } catch (error) {
-      throw new Error('Falha ao criar o usuário.');
+      throw new DatabaseError('Falha ao criar o usuário.');
     }
   }
+
+  // async createUserAndSkills(
+  //   createUserDto: CreateUserDto,
+  //   skills: SkillEntity[],
+  // ): Promise<UserEntity> {
+  //   const transaction = await this.prisma.$transaction([
+  //     this.prisma.users.create({
+  //       data: createUserDto,
+  //     }),
+  //     ...skills.map((skill) =>
+  //       this.prisma.skills.create({
+  //         data: skill,
+  //       }),
+  //     ),
+  //   ]);
+
+  //   if (transaction[0] instanceof UserEntity) {
+  //     return transaction[0] as UserEntity;
+  //   } else {
+  //     throw new DatabaseError('Falha ao criar o usuário e as habilidades.');
+  //   }
+  // }
 
   async findAll(): Promise<UserEntity[]> {
     try {
@@ -26,7 +49,7 @@ export class UsersRepository {
         },
       });
     } catch (error) {
-      throw new Error('Falha ao buscar os usuários.');
+      throw new DatabaseError('Falha ao buscar os usuários.');
     }
   }
 
@@ -51,7 +74,7 @@ export class UsersRepository {
         data: updateUserDto,
       });
     } catch (error) {
-      throw new Error('Falha ao atualizar o usuário.');
+      throw new DatabaseError('Falha ao atualizar o usuário.');
     }
   }
 
@@ -63,7 +86,7 @@ export class UsersRepository {
         },
       });
     } catch (error) {
-      throw new Error('Falha ao excluir o usuário.');
+      throw new DatabaseError('Falha ao excluir o usuário.');
     }
   }
 }
