@@ -56,7 +56,7 @@ export class CreateUserDto {
 
   @ApiProperty({
     description: 'Grau de escolaridade',
-    examples: [
+    example: [
       'FUNDAMENTAL_COMPLETO',
       'MEDIO_INCOMPLETO',
       'MEDIO_COMPLETO',
