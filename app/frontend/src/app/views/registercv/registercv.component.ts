@@ -12,4 +12,8 @@ export class RegistercvComponent {
   navigateToCreateCV(): void {
     this.router.navigate(['register/newcv'])
   }
+
+  navigateToCreateUser(): void {
+    this.router.navigate(['register/newuser'])
+  }
 }
