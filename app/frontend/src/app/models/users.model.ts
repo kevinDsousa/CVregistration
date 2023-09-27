@@ -1,0 +1,19 @@
+export interface UsersModel {
+  id?: number;
+  name: string;
+  email: string;
+  cpf: string;
+  birday: string;
+  phone: string;
+  password: string;
+  education:
+    | 'FUNDAMENTAL_COMPLETO'
+    | 'MEDIO_INCOMPLETO'
+    | 'MEDIO_COMPLETO'
+    | 'SUPERIOR_INCOMPLETO'
+    | 'SUPERIOR_COMPLETO'
+    | 'MESTRADO'
+    | 'DOUTORADO';
+  idskill: number;
+  admin?: boolean;
+}

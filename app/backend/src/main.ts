@@ -9,7 +9,7 @@ import { ConflictInterceptor } from './common/erros/interceptors/conflicterror';
 import { DatabaseInterceptor } from './common/erros/interceptors/database.interceptor';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
