@@ -34,4 +34,12 @@ export class UsersService {
   create(user: UsersModel): Observable<UsersModel> {
     return this.http.post<UsersModel>(this.BASEURL, user);
   }
+
+  /**
+   * Função com verbo get para pegar usuários do backend
+   * @returns Retona uma lista de usuários
+   */
+  read(): Observable<UsersModel[]> {
+    return this.http.get<UsersModel[]>(this.BASEURL);
+  }
 }

@@ -34,4 +34,12 @@ export class CurriculoService {
   create(cv: CurriculumModel): Observable<CurriculumModel> {
     return this.http.post<CurriculumModel>(this.BASEURL, cv);
   }
+
+    /**
+   * Função com verbo get para pegar curriculos do backend
+   * @returns Retona uma lista de curriculos
+   */
+  read(): Observable<CurriculumModel[]> {
+    return this.http.get<CurriculumModel[]>(this.BASEURL);
+  }
 }

@@ -12,7 +12,6 @@ import { FooterComponent } from './template/footer/footer.component';
 import { NavComponent } from './template/nav/nav.component'
 import { HomeComponent } from './views/home/home.component';
 import { RegistercvComponent } from './views/registercv/registercv.component';
-import { NewcvComponent } from './views/newcv/newcv.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav'
@@ -24,7 +23,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { FormsModule } from '@angular/forms';
-import { NewuserComponent } from './views/newuser/newuser.component';
+import { ReadcvComponent } from './components/curriculo/readcv/readcv.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { NewcvComponent } from './components/curriculo/newcv/newcv.component';
+import { NewuserComponent } from './components/users/newuser/newuser.component';
+import { ReaduserComponent } from './components/users/readuser/readuser.component';
 
 
 @NgModule({
@@ -37,6 +42,8 @@ import { NewuserComponent } from './views/newuser/newuser.component';
     RegistercvComponent,
     NewcvComponent,
     NewuserComponent,
+    ReaduserComponent,
+    ReadcvComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +59,9 @@ import { NewuserComponent } from './views/newuser/newuser.component';
     MatInputModule,
     FormsModule,
     MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

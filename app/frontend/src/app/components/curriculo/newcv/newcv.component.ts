@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CurriculumModel } from 'src/app/models/curriculum.model';
 import { CurriculoService } from 'src/app/services/curriculo.service';
+import { SkillsService } from 'src/app/services/skills.service';
 
 @Component({
   selector: 'app-newcv',
@@ -9,7 +10,7 @@ import { CurriculoService } from 'src/app/services/curriculo.service';
   styleUrls: ['./newcv.component.css']
 })
 export class NewcvComponent implements OnInit {
-  constructor(private cvService: CurriculoService, private router: Router) {}
+  constructor(private cvService: CurriculoService, private skillsService: SkillsService, private router: Router) {}
 
   cv: CurriculumModel = {
     vacancy: 'Desenvolvedor pleno',

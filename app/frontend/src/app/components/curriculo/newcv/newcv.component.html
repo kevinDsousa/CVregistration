@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-title>Novo curriculo</mat-card-title>
+  <form class="forms" action="">
+    <mat-form-field>
+      <input matInput placeholder="Vaga" [(ngModel)]="cv.vacancy" name="vacancy">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Vaga" [(ngModel)]="cv.iduser" name="iduser">
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="createUser()" color="primary">Gravar</button>
+  <button mat-raised-button (click)="cancelar()">Cancelar</button>
+</mat-card>
