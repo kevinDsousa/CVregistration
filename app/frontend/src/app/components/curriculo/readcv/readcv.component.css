@@ -1,0 +1,11 @@
+.edit {
+  padding-right: 0.5rem;
+}
+
+.edit > i {
+  color: #33b300
+}
+
+.delete > i {
+  color: #e35e6b;
+}

@@ -30,6 +30,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { NewcvComponent } from './components/curriculo/newcv/newcv.component';
 import { NewuserComponent } from './components/users/newuser/newuser.component';
 import { ReaduserComponent } from './components/users/readuser/readuser.component';
+import { UpdatecvComponent } from './components/curriculo/updatecv/updatecv.component';
+import { DeletecvComponent } from './components/curriculo/deletecv/deletecv.component';
 
 
 @NgModule({
@@ -44,6 +46,8 @@ import { ReaduserComponent } from './components/users/readuser/readuser.componen
     NewuserComponent,
     ReaduserComponent,
     ReadcvComponent,
+    UpdatecvComponent,
+    DeletecvComponent,
   ],
   imports: [
     BrowserModule,

@@ -42,4 +42,34 @@ export class CurriculoService {
   read(): Observable<CurriculumModel[]> {
     return this.http.get<CurriculumModel[]>(this.BASEURL);
   }
+
+  /**
+   * Função com verbo get por id para selecionar um curriculo especifico
+   * @param id identificador do curriculo
+   * @returns Retorna um observavel de curriculo
+   */
+  readById(id: string): Observable<CurriculumModel> {
+    const url = `${this.BASEURL}/${id}`
+    return this.http.get<CurriculumModel>(url)
+  }
+
+  /**
+   * Função que realiza a modificação dos dados de um curriculo
+   * @param cv Dados a serem enviados para atualizacao
+   * @returns Retorna um observavel para atualizacao de dados do curriculo
+   */
+  update(cv: CurriculumModel): Observable<CurriculumModel> {
+    const url = `${this.BASEURL}/${cv.id}`;
+    return this.http.patch<CurriculumModel>(url, cv)
+  }
+
+  /**
+   * Função que apaga um curriculo
+   * @param id identificador
+   * @returns Retorna um observavel para apagar um curriculo
+   */
+  delete(id: string): Observable<CurriculumModel> {
+    const url = `${this.BASEURL}/${id}`;
+    return this.http.delete<CurriculumModel>(id)
+  }
 }

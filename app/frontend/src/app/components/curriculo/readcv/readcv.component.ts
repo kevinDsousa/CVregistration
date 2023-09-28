@@ -9,14 +9,13 @@ import { CurriculoService } from 'src/app/services/curriculo.service';
 })
 export class ReadcvComponent {
   cv: CurriculumModel[] = [];
-  displayedColumns: string[] = ['id', 'vacancy', 'userName', 'userEmail', 'userPhone', 'userEducation', 'userSkills'];
+  displayedColumns: string[] = ['id', 'vacancy', 'userName', 'userEmail', 'userPhone', 'userEducation', 'userSkills', 'action'];
 
   constructor(private cvService: CurriculoService) {}
 
   ngOnInit(): void {
     this.cvService.read().subscribe(cv => {
       this.cv = cv;
-      console.log(cv);
     })
   }
 }
