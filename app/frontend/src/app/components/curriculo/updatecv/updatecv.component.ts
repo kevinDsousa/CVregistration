@@ -14,13 +14,17 @@ export class UpdatecvComponent implements OnInit{
   cv!: CurriculumModel;
 
   ngOnInit(): void {
-    const id: string | null = this.route.snapshot.paramMap.get('id')
-    if (id !== null) {
-      this.cvService.readById(id).subscribe((cv) => {
-        this.cv = cv;
-      })
+    const idParam = this.route.snapshot.paramMap.get('id');
+    if (idParam !== null) {
+      const id: number = +idParam;
+      if (!isNaN(id)) {
+        this.cvService.readById(id).subscribe((cv) => {
+          this.cv = cv;
+        });
+      }
     }
   }
+
 
   cancelar() {
     this.router.navigate(['/register']);

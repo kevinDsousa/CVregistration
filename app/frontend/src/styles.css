@@ -16,3 +16,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   display: flex;
   flex-direction: column;
 }
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 10px;
+}
+
+.btn button {
+  width: 40%;
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  color: #262626;
+}

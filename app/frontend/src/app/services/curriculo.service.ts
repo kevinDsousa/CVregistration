@@ -48,7 +48,7 @@ export class CurriculoService {
    * @param id identificador do curriculo
    * @returns Retorna um observavel de curriculo
    */
-  readById(id: string): Observable<CurriculumModel> {
+  readById(id: number): Observable<CurriculumModel> {
     const url = `${this.BASEURL}/${id}`
     return this.http.get<CurriculumModel>(url)
   }
@@ -68,8 +68,8 @@ export class CurriculoService {
    * @param id identificador
    * @returns Retorna um observavel para apagar um curriculo
    */
-  delete(id: string): Observable<CurriculumModel> {
+  delete(id: number): Observable<CurriculumModel> {
     const url = `${this.BASEURL}/${id}`;
-    return this.http.delete<CurriculumModel>(id)
+    return this.http.delete<CurriculumModel>(url)
   }
 }

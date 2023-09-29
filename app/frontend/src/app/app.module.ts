@@ -21,17 +21,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
-import { FormsModule } from '@angular/forms';
-import { ReadcvComponent } from './components/curriculo/readcv/readcv.component';
+import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+
+import { FormsModule } from '@angular/forms';
+import { ReadcvComponent } from './components/curriculo/readcv/readcv.component';
 import { NewcvComponent } from './components/curriculo/newcv/newcv.component';
-import { NewuserComponent } from './components/users/newuser/newuser.component';
-import { ReaduserComponent } from './components/users/readuser/readuser.component';
 import { UpdatecvComponent } from './components/curriculo/updatecv/updatecv.component';
 import { DeletecvComponent } from './components/curriculo/deletecv/deletecv.component';
+import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
+
 
 
 @NgModule({
@@ -43,8 +44,6 @@ import { DeletecvComponent } from './components/curriculo/deletecv/deletecv.comp
     HomeComponent,
     RegistercvComponent,
     NewcvComponent,
-    NewuserComponent,
-    ReaduserComponent,
     ReadcvComponent,
     UpdatecvComponent,
     DeletecvComponent,
@@ -66,8 +65,10 @@ import { DeletecvComponent } from './components/curriculo/deletecv/deletecv.comp
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatSelectModule,
+    NgChartsModule,
   ],
-  providers: [],
+  providers: [{ provide: NgChartsConfiguration, useValue: { generateColors: false }}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

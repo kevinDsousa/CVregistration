@@ -14,7 +14,18 @@ export class NewcvComponent implements OnInit {
 
   cv: CurriculumModel = {
     vacancy: 'Desenvolvedor pleno',
-    iduser: 6
+    iduser: 6,
+    user: {
+      name: 'kevin',
+      email: 'string',
+      cpf: 'string',
+      birday: 'string',
+      phone: 'string',
+      password: 'string',
+      education: 'FUNDAMENTAL_COMPLETO',
+      skill: {nameSkill: 'java'},
+      idskill: 1,
+    },
   }
 
   ngOnInit(): void {}
@@ -22,7 +33,7 @@ export class NewcvComponent implements OnInit {
   createUser(): void {
     this.cvService.create(this.cv).subscribe(() => {
       this.cvService.showMessage('Curriculo cadastrado com sucesso');
-      this.router.navigate(['/register'])
+      // this.router.navigate(['/register'])
     })
   }
 

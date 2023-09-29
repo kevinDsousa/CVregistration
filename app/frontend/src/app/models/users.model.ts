@@ -1,3 +1,5 @@
+import { SkillsModel } from "./skills.model";
+
 export interface UsersModel {
   id?: number;
   name: string;
@@ -14,6 +16,7 @@ export interface UsersModel {
     | 'SUPERIOR_COMPLETO'
     | 'MESTRADO'
     | 'DOUTORADO';
-  idskill: number;
+  idskill: number
+  skill: SkillsModel;
   admin?: boolean;
 }
