@@ -34,3 +34,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   text-align: center;
   color: #262626;
 }
+
+.container {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+span a {
+  color: #ccc;
+  transition-duration: 200ms;
+}
+
+span a:hover {
+  color: #7e7c7c;
+}

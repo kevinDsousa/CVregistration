@@ -10,7 +10,7 @@ export class RegistercvComponent {
   constructor(private router: Router) {}
 
   navigateToCreateCV(): void {
-    this.router.navigate(['register/newcv'])
+    this.router.navigate(['registercv/newcv'])
   }
 
   navigateToCreateUser(): void {

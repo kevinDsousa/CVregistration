@@ -1,28 +1,16 @@
 .header {
   display: flex;
+  background-color: #262626;
   align-items: center;
-  padding: 5px 5px;
-  background-color: #313131;
-  padding-bottom: 10px;
-  height: 80px;
+  justify-content: center;
+  gap: 30px;
 }
 
-.header a {
-  padding-left: 10px;
-  display: flex;
-  align-items: center;
+.header span {
+  line-height: 20px;
+}
+
+.header span a {
   text-decoration: none;
-}
-
-.header .logo {
-  max-width: 70px;
-  border-radius:  50%;
-}
-
-.header .title-group {
-  padding-left: 3rem;
-}
-
-.header .title-group i {
-  padding-right: 1.5rem;
+  padding-right: 10px;
 }

@@ -1,0 +1,9 @@
+.container .row img {
+  width: 50%;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -11,7 +11,7 @@ import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { NavComponent } from './template/nav/nav.component'
 import { HomeComponent } from './views/home/home.component';
-import { RegistercvComponent } from './views/registercv/registercv.component';
+import { RegistercvComponent } from './template/registercv/registercv.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav'
@@ -32,8 +32,13 @@ import { NewcvComponent } from './components/curriculo/newcv/newcv.component';
 import { UpdatecvComponent } from './components/curriculo/updatecv/updatecv.component';
 import { DeletecvComponent } from './components/curriculo/deletecv/deletecv.component';
 import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
+import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { BannerComponent } from './components/banner/banner.component';
 
-
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { GridComponent } from './components/grid/grid.component'
 
 @NgModule({
   declarations: [
@@ -47,6 +52,11 @@ import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
     ReadcvComponent,
     UpdatecvComponent,
     DeletecvComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
+    BannerComponent,
+    GridComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +77,7 @@ import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
     MatSortModule,
     MatSelectModule,
     NgChartsModule,
+    CarouselModule.forRoot(),
   ],
   providers: [{ provide: NgChartsConfiguration, useValue: { generateColors: false }}],
   bootstrap: [AppComponent]
