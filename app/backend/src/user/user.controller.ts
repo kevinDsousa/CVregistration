@@ -6,6 +6,8 @@ import {
   Patch,
   Param,
   Delete,
+  HttpException,
+  HttpStatus,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -17,6 +19,36 @@ import { UserModule } from './user.module';
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
+  /**
+   * Rota de login de usuário
+   * @param loginUserDto DTO contendo informações de login
+   * @returns Retorna um token JWT se o login for bem-sucedido
+   */
+  @Post('login')
+  async login(@Body() loginUserDto: { email: string; password: string }) {
+    try {
+      const user = await this.userService.findByEmailAndPassword(
+        loginUserDto.email,
+        loginUserDto.password,
+      );
+      if (!user) {
+        throw new HttpException(
+          'Credenciais inválidas',
+          HttpStatus.UNAUTHORIZED,
+        );
+      }
+
+      // Aqui você deve gerar um token JWT e retorná-lo
+      const token = 'seu-token-jwt';
+
+      return { token };
+    } catch (error) {
+      throw new HttpException(
+        'Falha ao realizar o login',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
 
   /**
    * Função controladora que passa uma promise para o serviço

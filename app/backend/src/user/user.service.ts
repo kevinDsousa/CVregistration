@@ -51,4 +51,8 @@ export class UserService {
   remove(id: number) {
     return this.repository.remove(id);
   }
+
+  findByEmailAndPassword(email: string, password: string) {
+    return this.repository.findByEmailAndPassword(email, password);
+  }
 }

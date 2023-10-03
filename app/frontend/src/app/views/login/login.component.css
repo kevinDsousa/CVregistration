@@ -28,7 +28,7 @@
 .loginform h2 {
   color: #fff;
   text-align: center;
-  text-shadow: 1px 1px 1px #00000090;
+  text-shadow: 1px 1px 1px #00000099;
   font-size: 30px;
 }
 
@@ -71,4 +71,8 @@
 
 .loginform .links a:hover {
   color: #ccc;
+}
+
+.warning p {
+  color: red;
 }

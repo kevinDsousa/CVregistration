@@ -4,6 +4,7 @@ import { UserEntity } from '../entities/user.entity';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { DatabaseError } from 'src/common/erros/types/DataBaseError';
+import { NotFoundError } from 'src/common/erros/types/NotFoundError';
 
 @Injectable()
 export class UsersRepository {
@@ -83,6 +84,24 @@ export class UsersRepository {
       });
     } catch (error) {
       throw new DatabaseError('Falha ao excluir o usuário.');
+    }
+  }
+
+  /**
+   * Encontre um usuário por e-mail e senha
+   * @param email Email do usuário
+   * @param password Senha do usuário
+   * @returns Retorna o usuário se encontrado, caso contrário, retorna null
+   */
+  async findByEmailAndPassword(
+    email: string,
+    password: string,
+  ): Promise<UserEntity | null> {
+    try {
+      const user = await this.findByEmailAndPassword(email, password);
+      return user;
+    } catch (error) {
+      throw new NotFoundError('Não localizado usuário ou senha');
     }
   }
 }

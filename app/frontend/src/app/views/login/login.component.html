@@ -2,16 +2,25 @@
   <div class="login">
     <div class="loginform">
       <h2>Acessar sua conta</h2>
-      <form action="">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username">
+      <form [formGroup]="loginForm" (ngSubmit)="acessar()">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" formControlName="email" autocomplete="current-password">
+        <div class="warning" *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
+          <p>Email é obrigatório.</p>
+        </div>
+        <div class="warning" *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">
+          <p>Email inválido.</p>
+        </div>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password">
-        <button type="submit">Acessar</button>
+        <input type="password" name="password" id="password" formControlName="password" autocomplete="current-password">
+        <div class="warning" *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+          <p>Senha é obrigatória.</p>
+        </div>
+        <button type="submit" [disabled]="!loginForm.valid">Acessar</button>
       </form>
       <div class="links">
         <a routerLink="/register">Registrar-se</a>
-        <a routerLink="/" >Voltar</a>
+        <a routerLink="/">Voltar</a>
       </div>
     </div>
   </div>

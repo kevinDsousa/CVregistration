@@ -40,6 +40,10 @@ import { UpdateuserComponent } from './components/user/updateuser/updateuser.com
 import { ReaduserComponent } from './components/user/readuser/readuser.component';
 import { DeleteuserComponent } from './components/user/deleteuser/deleteuser.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { HeaderComponent } from './template/header/header.component';
+import { FooterComponent } from './template/footer/footer.component';
+import { NavComponent } from './template/nav/nav.component';
+import { UserComponent } from './views/user/user.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +60,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     UpdateuserComponent,
     ReaduserComponent,
     DeleteuserComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
