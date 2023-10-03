@@ -7,11 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http'
 
-import { HeaderComponent } from './template/header/header.component';
-import { FooterComponent } from './template/footer/footer.component';
-import { NavComponent } from './template/nav/nav.component'
 import { HomeComponent } from './views/home/home.component';
-import { RegistercvComponent } from './template/registercv/registercv.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav'
@@ -25,38 +21,41 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
-import { FormsModule } from '@angular/forms';
-import { ReadcvComponent } from './components/curriculo/readcv/readcv.component';
-import { NewcvComponent } from './components/curriculo/newcv/newcv.component';
-import { UpdatecvComponent } from './components/curriculo/updatecv/updatecv.component';
-import { DeletecvComponent } from './components/curriculo/deletecv/deletecv.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { BannerComponent } from './components/banner/banner.component';
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { GridComponent } from './components/grid/grid.component'
+import { NewcvComponent } from './components/cv/newcv/newcv.component';
+import { ReadcvComponent } from './components/cv/readcv/readcv.component';
+import { UpdatecvComponent } from './components/cv/updatecv/updatecv.component';
+import { DeletecvComponent } from './components/cv/deletecv/deletecv.component';
+import { NewuserComponent } from './components/user/newuser/newuser.component';
+import { UpdateuserComponent } from './components/user/updateuser/updateuser.component';
+import { ReaduserComponent } from './components/user/readuser/readuser.component';
+import { DeleteuserComponent } from './components/user/deleteuser/deleteuser.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    NavComponent,
     HomeComponent,
-    RegistercvComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
     NewcvComponent,
     ReadcvComponent,
     UpdatecvComponent,
     DeletecvComponent,
-    LoginComponent,
-    RegisterComponent,
-    DashboardComponent,
-    BannerComponent,
-    GridComponent,
+    NewuserComponent,
+    UpdateuserComponent,
+    ReaduserComponent,
+    DeleteuserComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +76,10 @@ import { GridComponent } from './components/grid/grid.component'
     MatSortModule,
     MatSelectModule,
     NgChartsModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
     CarouselModule.forRoot(),
   ],
   providers: [{ provide: NgChartsConfiguration, useValue: { generateColors: false }}],

@@ -17,6 +17,6 @@ export interface UsersModel {
     | 'MESTRADO'
     | 'DOUTORADO';
   idskill: number
-  skill: SkillsModel;
+  skills: SkillsModel;
   admin?: boolean;
 }

@@ -1,0 +1,46 @@
+<mat-card class="container">
+  <form class="containerform" (ngSubmit)="submit()" [formGroup]="newuserForm" #formDir="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="Nome" formControlName="name">
+      <div class="validation-error" *ngIf="newuserForm.get('name')?.invalid && formDir.submitted">
+        <p *ngIf="newuserForm.get('name')?.hasError('required')">
+          O nome é obrigatório
+        </p>
+      </div>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="CPF" formControlName="cpf">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Telefone" formControlName="phone">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Aniversario" formControlName="birday">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Escolaridade</mat-label>
+      <mat-select placeholder="Selecione a escolaridade" formControlName="education">
+        <mat-option value="FUNDAMENTAL_COMPLETO">Fundamental Completo</mat-option>
+        <mat-option value="MEDIO_INCOMPLETO">Médio Incompleto</mat-option>
+        <mat-option value="MEDIO_COMPLETO">Médio Completo</mat-option>
+        <mat-option value="SUPERIOR_INCOMPLETO">Superior Incompleto</mat-option>
+        <mat-option value="SUPERIOR_COMPLETO">Superior Completo</mat-option>
+        <mat-option value="MESTRADO">Mestrado</mat-option>
+        <mat-option value="DOUTORADO">Doutorado</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-checkbox formControlName="admin">Admin</mat-checkbox>
+    <mat-form-field>
+      <input matInput placeholder="Habilidade" formControlName="skills">
+    </mat-form-field>
+  </form>
+  <div class="btn">
+    <button mat-raised-button (click)="submit()" color="primary">Gravar</button>
+    <button mat-raised-button (click)="cancelar()">Cancelar</button>
+  </div>
+</mat-card>
