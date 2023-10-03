@@ -22,28 +22,7 @@ export class CurriculoRepository {
 
   async findAll(): Promise<CurriculoEntity[]> {
     try {
-      return await this.prisma.cvs.findMany({
-        include: {
-          user: {
-            select: {
-              id: true,
-              name: true,
-              email: true,
-              cpf: true,
-              phone: true,
-              birday: true,
-              education: true,
-              admin: true,
-              createdAt: true,
-              skills: {
-                select: {
-                  nameSkill: true,
-                },
-              },
-            },
-          },
-        },
-      });
+      return await this.prisma.cvs.findMany();
     } catch (error) {
       throw new Error('Falha ao buscar os currículos.');
     }

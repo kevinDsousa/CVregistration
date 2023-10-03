@@ -43,11 +43,7 @@ export class UsersRepository {
 
   async findAll(): Promise<UserEntity[]> {
     try {
-      return await this.prisma.users.findMany({
-        include: {
-          skills: true,
-        },
-      });
+      return await this.prisma.users.findMany({});
     } catch (error) {
       throw new DatabaseError('Falha ao buscar os usuários.');
     }

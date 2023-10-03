@@ -20,20 +20,12 @@ datasource db {
 }
 
 model users {
-  id        Int       @id @default(autoincrement())
-  name      String    @unique @db.VarChar(60)
-  email     String    @db.VarChar(60)
-  cpf       String    @db.VarChar(14)
-  phone     String    @db.VarChar(11)
-  birday    DateTime  @db.Date()
-  education Education
-  password  String    @unique
-  admin     Boolean   @default(false)
-  createdAt DateTime  @default(now())
-
-  skills  skills @relation(fields: [idskill], references: [id])
-  idskill Int
-  cvs     cvs[]
+  id        Int      @id @default(autoincrement())
+  name      String   @unique @db.VarChar(60)
+  email     String   @db.VarChar(60)
+  password  String   @unique
+  admin     Boolean  @default(false)
+  createdAt DateTime @default(now())
 
   @@map("users")
 }
@@ -43,18 +35,24 @@ model skills {
   nameSkill String
   createdAt DateTime @default(now())
 
-  users users[]
+  cvs cvs[]
 
   @@map("skills")
 }
 
 model cvs {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
+  name      String    @unique @db.VarChar(60)
+  email     String    @db.VarChar(60)
   vacancy   String
-  createdAt DateTime @default(now())
+  cpf       String    @db.VarChar(14)
+  birthday  DateTime  @db.Date()
+  phone     String    @db.VarChar(11)
+  education Education
+  createdAt DateTime  @default(now())
+  idskill   Int
 
-  user   users @relation(fields: [iduser], references: [id])
-  iduser Int
+  skills skills @relation(fields: [idskill], references: [id])
 
   @@map("curriculum")
 }
