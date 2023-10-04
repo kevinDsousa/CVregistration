@@ -11,6 +11,7 @@ import { UpdatecvComponent } from './components/cv/updatecv/updatecv.component';
 import { DeletecvComponent } from './components/cv/deletecv/deletecv.component';
 import { UpdateuserComponent } from './components/user/updateuser/updateuser.component';
 import { NewuserComponent } from './components/user/newuser/newuser.component';
+import { DeleteuserComponent } from './components/user/deleteuser/deleteuser.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -23,7 +24,7 @@ const routes: Routes = [
   { path: "readuser", component:  UsercrudComponent},
   { path: "readuser/newuser", component:  NewuserComponent},
   { path: "readuser/update/:id", component:  UpdateuserComponent},
-  { path: "readuser/delete/:id", component:  DeletecvComponent},
+  { path: "readuser/delete/:id", component:  DeleteuserComponent},
   { path: "dashboard", component: DashboardComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

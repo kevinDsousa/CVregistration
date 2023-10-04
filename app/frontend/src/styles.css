@@ -3,12 +3,6 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #ccc; }
 
-.forms {
-  padding: 2rem 4rem;
-  display: flex;
-  flex-direction: column;
-}
-
 .btn {
   display: flex;
   align-items: center;

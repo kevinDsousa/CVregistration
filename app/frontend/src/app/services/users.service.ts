@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsersService {
-
   public readonly BASEURL = `${environment.BASEURL}/user`
 
   constructor(private snackbar: MatSnackBar, private http: HttpClient) { }
@@ -41,5 +40,37 @@ export class UsersService {
    */
   read(): Observable<UsersModel[]> {
     return this.http.get<UsersModel[]>(this.BASEURL);
+  }
+
+  /**
+ * Funcção que busca um único usuário através do ID
+ * @param id Identificador de usuário
+ * @returns Retorna um único usuário
+ */
+  readById(id: number): Observable<UsersModel> {
+    const url = `${this.BASEURL}/${id}`;
+    return this.http.get<UsersModel>(url);
+  }
+
+
+  /**
+   * Atualiza o usuário
+   * @param id identificador de usuario
+   * @param data Dados a serem alterados
+   * @returns Retorna um observable passando os dados para o backend
+   */
+  update(id: number, data: UsersModel): Observable<UsersModel> {
+    const url = `${this.BASEURL}/${id}`;
+    return this.http.patch<UsersModel>(url, data);
+  }
+
+  /**
+   * Deleta usuário
+   * @param id identificador de usuario
+   * @returns Retorna um observable passando id para deletar
+   */
+  delete(id: number): Observable<UsersModel> {
+    const url = `${this.BASEURL}/${id}`;
+    return this.http.delete<UsersModel>(url);
   }
 }
