@@ -34,7 +34,7 @@ span a:hover {
   background-color: #ccc;
   display: flex;
   flex-direction: column;
-  margin: 0 6rem;
+  margin: 0 5rem;
   gap: 10px;
 }
 
@@ -48,4 +48,12 @@ span a:hover {
   color: #262626;
   font-weight: bold;
   text-align: center;
+}
+
+.read {
+  margin-left: 10%;
+}
+
+.createbtn {
+  margin-left: 10%;
 }

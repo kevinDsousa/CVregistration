@@ -1,6 +1,6 @@
 .sidenav {
   background-color: #313131;
-  width: 4rem;
+  width: 12rem;
 }
 
 .sidenav i {
@@ -9,6 +9,12 @@
   padding-right: 1rem;
 }
 
+.nav-list span {
+  color: white;
+  line-height: 40px;
+  font-size: 15px;
+
+}
 .content {
   padding: 4rem;
   background-color: #f7f3f3;

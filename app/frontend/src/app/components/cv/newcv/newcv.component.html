@@ -1,1 +1,58 @@
-<p>newcv works!</p>
+<app-nav></app-nav>
+<section>
+  <div class="newcv">
+    <h2>Novo curriculo</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name" autocomplete="name">
+        <mat-error *ngIf="registerForm.get('name')?.hasError('required')">Nome é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" autocomplete="email">
+        <mat-error *ngIf="registerForm.get('email')?.hasError('required')">Email é obrigatório</mat-error>
+        <mat-error *ngIf="registerForm.get('email')?.hasError('email')">Email inválido</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Cargo</mat-label>
+        <input matInput type="text" formControlName="vacancy" autocomplete="vacancy">
+        <mat-error *ngIf="registerForm.get('vacancy')?.hasError('required')">Cargo é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>cpf</mat-label>
+        <input matInput type="text" formControlName="cpf" autocomplete="cpf">
+        <mat-error *ngIf="registerForm.get('cpf')?.hasError('required')">CPF é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Aniversário</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="birthday" autocomplete="birthday">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="registerForm.get('birthday')?.hasError('required')">Aniversário é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>phone</mat-label>
+        <input matInput type="text" formControlName="phone" autocomplete="phone">
+        <mat-error *ngIf="registerForm.get('phone')?.hasError('required')">Telefone é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Educação</mat-label>
+        <mat-select formControlName="education" autocomplete="education">
+          <mat-option value="FUNDAMENTAL_COMPLETO">Fundamental Completo</mat-option>
+          <mat-option value="MEDIO_INCOMPLETO">Médio Incompleto</mat-option>
+          <mat-option value="MEDIO_COMPLETO">Médio Completo</mat-option>
+          <mat-option value="SUPERIOR_INCOMPLETO">Superior Incompleto</mat-option>
+          <mat-option value="SUPERIOR_COMPLETO">Superior Completo</mat-option>
+          <mat-option value="MESTRADO">Mestrado</mat-option>
+          <mat-option value="DOUTORADO">Doutorado</mat-option>
+        </mat-select>
+        <mat-error *ngIf="registerForm.get('education')?.hasError('required')">Educação é obrigatória</mat-error>
+      </mat-form-field>
+      <button type="submit" [disabled]="registerForm.invalid">Cadastrar</button>
+    </form>
+    <div class="links">
+      <a routerLink="/readcv">Voltar</a>
+    </div>
+  </div>
+</section>

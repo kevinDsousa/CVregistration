@@ -1,20 +1,29 @@
 <mat-sidenav-container>
   <mat-sidenav class="sidenav mat-elevation-z4" mode="side" opened fixedInViewport="true">
-    <mat-nav-list class="nav-list">
-      <a mat-list-item routerLink="/">
+    <mat-nav-list class="linksmenu nav-list">
+      <a mat-list-item routerLink="/dashboard">
         <i class="material-icons">
-          home
+          dashboard
         </i>
+        <span>dashboard</span>
       </a>
       <a mat-list-item routerLink="/readcv">
         <i class="material-icons">
           list_alt
         </i>
+        <span>curriculos</span>
       </a>
       <a mat-list-item routerLink="/readuser">
         <i class="material-icons">
           person
         </i>
+        <span>usuários</span>
+      </a>
+      <a mat-list-item routerLink="/">
+        <i class="material-icons">
+          logout
+        </i>
+        <span>sair</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>

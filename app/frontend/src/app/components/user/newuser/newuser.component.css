@@ -3,7 +3,9 @@
   justify-content: start;
   flex-direction: column;
   height: 100vh;
-  margin: 0 6rem;
+  align-items: center;
+  width: 60%;
+  margin: 0 20rem;
 }
 
 .newuser h2 {
@@ -16,6 +18,7 @@
   display: flex;
   flex-direction: column;
   padding: 2px 20px;
+  width: 100%;
 }
 
 .newuser form button {

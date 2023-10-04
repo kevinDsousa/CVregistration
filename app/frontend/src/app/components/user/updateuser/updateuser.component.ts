@@ -31,14 +31,14 @@ export class UpdateuserComponent {
   }
 
   cancelar() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/readuser']);
   }
 
   updateCv() {
     if (this.userId !== undefined) {
       this.userService.update(this.userId, this.user).subscribe(() => {
         this.userService.showMessage('Currículo atualizado com sucesso');
-        this.router.navigate(['/register']);
+        this.router.navigate(['/readuser']);
       });
     }
   }

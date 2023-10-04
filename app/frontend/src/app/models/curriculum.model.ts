@@ -1,8 +1,14 @@
+import { SkillsModel } from "./skills.model";
 import { UsersModel } from "./users.model";
 
 export interface CurriculumModel {
   id?: number
+  name: string;
+  email: string
   vacancy: string;
-  iduser?: number;
-  user: UsersModel;
+  cpf: string;
+  birthday: string;
+  phone: string;
+  education: string;
+  idskill: SkillsModel;
 }
