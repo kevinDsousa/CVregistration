@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { UsersModel } from 'src/app/models/users.model';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -10,59 +8,38 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./newuser.component.css']
 })
 export class NewuserComponent implements OnInit {
-  newuserForm!: FormGroup<any>;
-  constructor(private userService: UsersService, private router: Router) { }
+  registerForm: FormGroup;
 
-  ngOnInit(): void {
-    this.newuserForm = new FormGroup({
-      id: new FormControl(''),
-      name: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
-      cpf: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [Validators.required]),
-      birday: new FormControl('', [Validators.required]),
-      education: new FormControl('', [Validators.required]),
-      admin: new FormControl(''),
-      skills: new FormControl(''),
-    })
-  }
-
-  submit() {
-    if (this.newuserForm.invalid) {
-      return;
-    }
-
-    console.log('enviou');
-  }
-  createUser(): void {
-    if (this.newuserForm.invalid) {
-      return;
-    }
-    const formData = this.newuserForm.value;
-
-    const user: UsersModel = {
-      id: formData.id,
-      name: formData.name,
-      email: formData.email,
-      cpf: formData.cpf,
-      birthday: formData.birday,
-      phone: formData.phone,
-      password: formData.password,
-      education: formData.education,
-      idskill: formData.idskill,
-      skills: formData.skills,
-    };
-
-    this.userService.create(user).subscribe(() => {
-      this.userService.showMessage('Currículo cadastrado com sucesso');
-      console.log(user);
-      // this.router.navigate(['/registercv']);
+  constructor(private formBuilder: FormBuilder, private userService: UsersService) {
+    this.registerForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      admin: [false]
     });
   }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
+  onSubmit() {
+    if (this.registerForm.valid) {
+      const userData = this.registerForm.value;
 
-  cancelar() {
-    this.router.navigate(['/registercv'])
+      this.userService.create(userData).subscribe(
+        (response: any) => {
+          this.userService.showMessage('Novo usuário criado com sucesso.');
+        },
+        (error: any) => {
+          console.error('Erro ao criar o usuário:', error);
+          if (error.status === 409) {
+            this.userService.showMessage('Já existe um usuário com este email.');
+          } else {
+            this.userService.showMessage('Erro ao criar o usuário.');
+          }
+        }
+      );
+    }
   }
 
 }

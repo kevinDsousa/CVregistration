@@ -25,10 +25,10 @@ export class RegisterComponent {
 
       this.userService.create(userData).subscribe(
         (response: any) => {
-          console.log('Novo usuário criado:', response);
+          this.userService.showMessage('Novo usuário criado:');
         },
         (error: any) => {
-          console.error('Erro ao criar o usuário:', error);
+          this.userService.showMessage('Erro ao criar o usuário:');
         }
       );
     }

@@ -1,6 +1,50 @@
-.containerform {
-  padding: 10px 40px;
-  width: 100%;
+.newuser {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 6rem;
+}
+
+.newuser h2 {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.newuser form {
   display: flex;
   flex-direction: column;
+  padding: 2px 20px;
+}
+
+.newuser form button {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  height: 40px;
+  transition-duration: 200ms;
+}
+
+.newuser form button:hover {
+  background-color: darkgreen;
+}
+
+.links {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #262626;
+}
+
+.links a:hover {
+  color: #161616
 }

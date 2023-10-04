@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+<section>
+  <div class="newuser">
+    <h2>Novo usuário</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name" autocomplete="name">
+        <mat-error *ngIf="registerForm.get('name')?.hasError('required')">Nome é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" autocomplete="email">
+        <mat-error *ngIf="registerForm.get('email')?.hasError('required')">Email é obrigatório</mat-error>
+        <mat-error *ngIf="registerForm.get('email')?.hasError('email')">Email inválido</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="password" autocomplete="new-password">
+        <mat-error *ngIf="registerForm.get('password')?.hasError('required')">Senha é obrigatória</mat-error>
+        <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">Senha deve ter no mínimo 6 caracteres</mat-error>
+      </mat-form-field>
+      <mat-checkbox formControlName="admin">Admin</mat-checkbox>
+      <button type="submit" [disabled]="registerForm.invalid">Cadastrar</button>
+    </form>
+    <div class="links">
+      <a routerLink="/">Voltar</a>
+    </div>
+  </div>
+</section>

@@ -44,6 +44,10 @@ span a:hover {
   gap: 10px;
 }
 
+.crud button {
+  width: 30%;
+}
+
 .crud h2 {
   margin-top: 5px;
   font-size: 25px;
