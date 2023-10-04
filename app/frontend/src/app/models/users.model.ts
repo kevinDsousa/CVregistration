@@ -5,7 +5,7 @@ export interface UsersModel {
   name: string;
   email: string;
   cpf: string;
-  birday: string;
+  birthday: string;
   phone: string;
   password: string;
   education:

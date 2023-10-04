@@ -45,7 +45,7 @@ export class NewuserComponent implements OnInit {
       name: formData.name,
       email: formData.email,
       cpf: formData.cpf,
-      birday: formData.birday,
+      birthday: formData.birday,
       phone: formData.phone,
       password: formData.password,
       education: formData.education,

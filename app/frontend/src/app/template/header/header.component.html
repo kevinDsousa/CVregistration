@@ -1,14 +1,21 @@
 <mat-toolbar class="header mat-elevation-z3">
-  <span>
-    <a href="/">
-      <!-- <img routerLink="/" class="logo" src="assets/images/logo.png" alt="logo"> -->
-    </a>
-  </span>
-  <span  [ngClass]="{'hide-element': condition}" class="title-group">
-    <a href="">
-      <i class="material-icons">
-        dashboard
-      </i>
-    </a>
-  </span>
+  <div>
+    <span>
+      <a href="/">
+        <img routerLink="/" class="logo" src="../../../assets/logo.png" alt="logo">
+      </a>
+    </span>
+    <span  [ngClass]="{'hide-element': condition}" class="title-group">
+      <a href="/dashboard">
+        <i class="material-icons">
+          dashboard
+        </i>
+      </a>
+      <a href="/login">
+        <i class="material-icons">
+          login
+        </i>
+      </a>
+    </span>
+  </div>
 </mat-toolbar>

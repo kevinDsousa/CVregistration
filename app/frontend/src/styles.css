@@ -3,14 +3,6 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #ccc; }
 
-.red {
-  color: rgb(227, 94, 107)
-}
-
-.v-middle {
-  vertical-align: middle;
-}
-
 .forms {
   padding: 2rem 4rem;
   display: flex;
@@ -35,13 +27,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   color: #262626;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-}
-
 span a {
   color: #ccc;
   transition-duration: 200ms;
@@ -49,4 +34,20 @@ span a {
 
 span a:hover {
   color: #7e7c7c;
+}
+
+.crud {
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  margin: 0 6rem;
+  gap: 10px;
+}
+
+.crud h2 {
+  margin-top: 5px;
+  font-size: 25px;
+  color: #262626;
+  font-weight: bold;
+  text-align: center;
 }

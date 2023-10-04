@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { UsersService } from 'src/app/services/users.service';
+import { LoginModel } from 'src/app/models/login.model';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +12,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  credentials: LoginModel = {
+    email: '',
+    password: ''
+  };
 
   constructor(
     private router: Router,
+    private userService: UsersService,
     private formBuilder: FormBuilder,
     private http: HttpClient
   ) {
@@ -26,15 +33,15 @@ export class LoginComponent implements OnInit {
 
   acessar() {
     if (this.loginForm.valid) {
-      const credentials = this.loginForm.value;
+      this.credentials = this.loginForm.value as LoginModel;
 
-      this.http.post<any>('http://localhost:3000/user', credentials)
+      this.http.post<any>('http://localhost:3000/user', this.credentials)
         .subscribe(
           response => {
-            console.log('Usuário autenticado:', response);
+            this.userService.showMessage('Usuário autenticado:');
           },
           error => {
-            console.error('Erro ao autenticar:', error);
+            this.userService.showMessage('Erro ao autenticar:');
           }
         );
     }

@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  images: string[] = [
+    '../../../assets/banner.jpg',
+    '../../../assets/banner2.jpg',
+  ];
 }

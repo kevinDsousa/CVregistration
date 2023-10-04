@@ -5,6 +5,7 @@ import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { DatabaseError } from 'src/common/erros/types/DataBaseError';
 import { NotFoundError } from 'src/common/erros/types/NotFoundError';
+import { LoginEntity } from '../entities/login.entity';
 
 @Injectable()
 export class UsersRepository {
@@ -96,7 +97,7 @@ export class UsersRepository {
   async findByEmailAndPassword(
     email: string,
     password: string,
-  ): Promise<UserEntity | null> {
+  ): Promise<LoginEntity | null> {
     try {
       const user = await this.findByEmailAndPassword(email, password);
       return user;

@@ -44,6 +44,8 @@ import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { NavComponent } from './template/nav/nav.component';
 import { UserComponent } from './views/user/user.component';
+import { UsercrudComponent } from './template/usercrud/usercrud.component';
+import { CvcrudComponent } from './template/cvcrud/cvcrud.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { UserComponent } from './views/user/user.component';
     FooterComponent,
     NavComponent,
     UserComponent,
+    UsercrudComponent,
+    CvcrudComponent,
   ],
   imports: [
     BrowserModule,
