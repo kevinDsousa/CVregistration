@@ -9,6 +9,9 @@ import { CurriculoService } from 'src/app/services/curriculo.service';
   styleUrls: ['./deletecv.component.css']
 })
 export class DeletecvComponent {
+  /**
+   * Modelo de curriculo
+   */
   cv!: CurriculumModel;
 
   constructor(private cvService: CurriculoService, private router: Router, private route: ActivatedRoute) { }
@@ -31,9 +34,16 @@ export class DeletecvComponent {
     }
   }
 
+  /**
+   * Interação com o botão cancelar
+   */
   cancelar(): void {
     this.router.navigate(['/readuser'])
   }
+
+  /**
+   * Deleta um curriculo
+   */
   deleteCv(): void {
     if (this.cv && this.cv.id !== undefined) {
       this.cvService.delete(this.cv.id).subscribe(() => {

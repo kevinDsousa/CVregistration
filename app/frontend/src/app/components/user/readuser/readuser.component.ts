@@ -18,6 +18,4 @@ export class ReaduserComponent implements OnInit{
       this.user = user;
     })
   }
-
-
 }

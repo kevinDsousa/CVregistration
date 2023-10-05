@@ -1,6 +1,6 @@
 .updateuser {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 60%;

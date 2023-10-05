@@ -43,10 +43,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { NavComponent } from './template/nav/nav.component';
-import { UserComponent } from './views/user/user.component';
 import { UsercrudComponent } from './template/usercrud/usercrud.component';
 import { CvcrudComponent } from './template/cvcrud/cvcrud.component';
 import { PagenotfoundComponent } from './views/pagenotfound/pagenotfound.component';
+import { HttpModule } from './module/http/http.module';
 
 @NgModule({
   declarations: [
@@ -66,7 +66,6 @@ import { PagenotfoundComponent } from './views/pagenotfound/pagenotfound.compone
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    UserComponent,
     UsercrudComponent,
     CvcrudComponent,
     PagenotfoundComponent,
@@ -94,6 +93,7 @@ import { PagenotfoundComponent } from './views/pagenotfound/pagenotfound.compone
     MatDatepickerModule,
     MatNativeDateModule,
     MatCheckboxModule,
+    HttpModule,
     CarouselModule.forRoot(),
   ],
   providers: [{ provide: NgChartsConfiguration, useValue: { generateColors: false }}],

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { UsersService } from 'src/app/services/users.service';
 import { LoginModel } from 'src/app/models/login.model';
+import { AuthService } from 'src/app/services/auth.service';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-login',
@@ -17,9 +18,11 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
+  BASEURL = environment.BASEURL
+
   constructor(
     private router: Router,
-    private userService: UsersService,
+    private authService: AuthService,
     private formBuilder: FormBuilder,
     private http: HttpClient
   ) {
@@ -35,13 +38,13 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.credentials = this.loginForm.value as LoginModel;
 
-      this.http.post<any>('http://localhost:3000/user', this.credentials)
+      this.http.post<LoginModel>(`${this.BASEURL}/user`, this.credentials)
         .subscribe(
           response => {
-            this.userService.showMessage('Usuário autenticado:');
+            this.authService.showMessage('Usuário autenticado:');
           },
           error => {
-            this.userService.showMessage('Erro ao autenticar:');
+            this.authService.showMessage('Erro ao autenticar:');
           }
         );
     }

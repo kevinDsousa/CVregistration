@@ -57,6 +57,7 @@ export class UpdateuserComponent {
       this.userService.update(this.userId, userData).subscribe(
         (response: any) => {
           this.userService.showMessage('Usuário editado com sucesso.');
+          this.router.navigate(['readuser'])
         },
         (error: any) => {
           this.userService.showMessage('Erro ao editar o usuário:');
