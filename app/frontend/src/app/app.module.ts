@@ -47,6 +47,7 @@ import { UsercrudComponent } from './template/usercrud/usercrud.component';
 import { CvcrudComponent } from './template/cvcrud/cvcrud.component';
 import { PagenotfoundComponent } from './views/pagenotfound/pagenotfound.component';
 import { HttpModule } from './module/http/http.module';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { HttpModule } from './module/http/http.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgApexchartsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
