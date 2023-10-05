@@ -32,7 +32,7 @@ export class NewcvComponent {
           this.cvService.showMessage('Novo currículo criado com sucesso.');
         },
         (error: any) => {
-          console.error('Erro ao criar o currículo:', error);
+          this.cvService.showMessage('Erro ao criar o currículo');
           if (error.status === 409) {
             this.cvService.showMessage('Já existe um currículo com este email.');
           } else {

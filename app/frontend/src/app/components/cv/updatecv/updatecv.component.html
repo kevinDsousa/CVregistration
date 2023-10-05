@@ -1,32 +1,58 @@
 <app-nav></app-nav>
-<mat-card>
-  <mat-card-title class="title">Editar currículo</mat-card-title>
-  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <input matInput placeholder="Vaga" formControlName="vacancy">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Nome" formControlName="name">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Email" formControlName="email">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Telefone" formControlName="phone">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Escolaridade</mat-label>
-      <mat-select placeholder="Selecione a escolaridade" formControlName="education">
-        <mat-option value="FUNDAMENTAL_COMPLETO">Fundamental Completo</mat-option>
-        <!-- Adicione outras opções aqui -->
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Habilidade" formControlName="skill">
-    </mat-form-field>
-  </form>
-  <div class="btn">
-    <button mat-raised-button type="submit" color="accent">Atualizar</button>
-    <button mat-raised-button (click)="cancelar()">Cancelar</button>
+<section>
+  <div class="updatecv">
+    <h2>Editar curriculo</h2>
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name" autocomplete="name">
+        <mat-error *ngIf="updateForm.get('name')?.hasError('required')">Nome é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" autocomplete="email">
+        <mat-error *ngIf="updateForm.get('email')?.hasError('required')">Email é obrigatório</mat-error>
+        <mat-error *ngIf="updateForm.get('email')?.hasError('email')">Email inválido</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Cargo</mat-label>
+        <input matInput type="text" formControlName="vacancy" autocomplete="vacancy">
+        <mat-error *ngIf="updateForm.get('vacancy')?.hasError('required')">Cargo é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>CPF</mat-label>
+        <input matInput type="text" formControlName="cpf" autocomplete="cpf">
+        <mat-error *ngIf="updateForm.get('cpf')?.hasError('required')">CPF é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Aniversário</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="birthday" autocomplete="birthday">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="updateForm.get('birthday')?.hasError('required')">Aniversário é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Telefone</mat-label>
+        <input matInput type="text" formControlName="phone" autocomplete="phone">
+        <mat-error *ngIf="updateForm.get('phone')?.hasError('required')">Telefone é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Educação</mat-label>
+        <mat-select formControlName="education" autocomplete="education">
+          <mat-option value="FUNDAMENTAL_COMPLETO">Fundamental Completo</mat-option>
+          <mat-option value="MEDIO_INCOMPLETO">Médio Incompleto</mat-option>
+          <mat-option value="MEDIO_COMPLETO">Médio Completo</mat-option>
+          <mat-option value="SUPERIOR_INCOMPLETO">Superior Incompleto</mat-option>
+          <mat-option value="SUPERIOR_COMPLETO">Superior Completo</mat-option>
+          <mat-option value="MESTRADO">Mestrado</mat-option>
+          <mat-option value="DOUTORADO">Doutorado</mat-option>
+        </mat-select>
+        <mat-error *ngIf="updateForm.get('education')?.hasError('required')">Educação é obrigatória</mat-error>
+      </mat-form-field>
+      <button type="submit" [disabled]="updateForm.invalid">Salvar</button>
+    </form>
+    <div class="links">
+      <a routerLink="/readcv">Cancelar</a>
+    </div>
   </div>
-</mat-card>
+</section>

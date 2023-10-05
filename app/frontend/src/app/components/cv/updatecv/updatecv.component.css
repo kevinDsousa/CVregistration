@@ -1,0 +1,54 @@
+.updatecv {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  width: 60%;
+  margin: 0 20rem;
+}
+
+.updatecv h2 {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.updatecv form {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 20px;
+  width: 100%;
+}
+
+.updatecv form button {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  height: 40px;
+  transition-duration: 200ms;
+}
+
+.updatecv form button:hover {
+  background-color: darkgreen;
+}
+
+.links {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #262626;
+  margin-bottom: 20px;
+}
+
+.links a:hover {
+  color: #161616
+}

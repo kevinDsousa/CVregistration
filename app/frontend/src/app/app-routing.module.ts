@@ -13,6 +13,7 @@ import { UpdateuserComponent } from './components/user/updateuser/updateuser.com
 import { NewuserComponent } from './components/user/newuser/newuser.component';
 import { DeleteuserComponent } from './components/user/deleteuser/deleteuser.component';
 import { NewcvComponent } from './components/cv/newcv/newcv.component';
+import { PagenotfoundComponent } from './views/pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: "readuser/update/:id", component:  UpdateuserComponent},
   { path: "readuser/delete/:id", component:  DeleteuserComponent},
   { path: "dashboard", component: DashboardComponent },
+  { path: '**', component: PagenotfoundComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
