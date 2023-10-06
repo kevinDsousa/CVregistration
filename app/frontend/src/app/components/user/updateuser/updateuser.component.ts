@@ -42,11 +42,11 @@ export class UpdateuserComponent {
           }
         },
         (error: any) => {
-          console.error('Erro ao carregar o usuário:', error);
+          this.userService.showMessage('Erro ao carregar o usuário:');
         }
       );
     } else {
-      console.error('ID do usuário inválido:', this.userId);
+      this.userService.showMessage(`ID do usuário inválido:, ${this.userId}`);
     }
   }
 

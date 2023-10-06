@@ -58,8 +58,8 @@ export class CurriculoService {
    * @param cv Dados a serem enviados para atualizacao
    * @returns Retorna um observavel para atualizacao de dados do curriculo
    */
-  update(cv: CurriculumModel): Observable<CurriculumModel> {
-    const url = `${this.BASEURL}/${cv.id}`;
+  update(id: number, cv: CurriculumModel): Observable<CurriculumModel> {
+    const url = `${this.BASEURL}/${id}`;
     return this.http.patch<CurriculumModel>(url, cv)
   }
 

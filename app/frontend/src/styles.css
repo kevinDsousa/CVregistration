@@ -43,14 +43,17 @@ span a:hover {
 }
 
 .crud h2 {
-  margin-top: 5px;
-  font-size: 25px;
-  color: #262626;
+  margin-top: 20px;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 2px 2px 2px #00000020;
   font-weight: bold;
   text-align: center;
 }
 
 .read {
+  display: flex;
+  flex-direction: column;
   margin-left: 10%;
 }
 
