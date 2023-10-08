@@ -14,6 +14,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { ApiCreatedResponse, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UserModule } from './user.module';
+import { IsPublic } from 'src/auth/decorators/is-public.decorator';
 
 @ApiTags('user')
 @Controller('user')
@@ -45,6 +46,7 @@ export class UserController {
     status: 500,
     description: 'O servidor encontrou um erro inesperado.',
   })
+  @IsPublic()
   @Post()
   @HttpCode(HttpStatus.OK)
   create(@Body() createUserDto: CreateUserDto) {

@@ -10,6 +10,7 @@ import { AuthService } from './auth.service';
 import { ApiResponse } from '@nestjs/swagger';
 import { LocalAuthGuard } from './guards/local-auth.guard';
 import { AuthRequestModel } from './models/auth-request';
+import { IsPublic } from './decorators/is-public.decorator';
 
 @Controller()
 export class AuthController {
@@ -31,6 +32,7 @@ export class AuthController {
     status: 500,
     description: 'O servidor encontrou um erro inesperado.',
   })
+  @IsPublic()
   @HttpCode(HttpStatus.OK)
   @Post('login')
   @UseGuards(LocalAuthGuard)
