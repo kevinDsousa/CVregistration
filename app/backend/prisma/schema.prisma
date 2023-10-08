@@ -22,7 +22,7 @@ datasource db {
 model users {
   id        Int      @id @default(autoincrement())
   name      String   @unique @db.VarChar(60)
-  email     String   @db.VarChar(60)
+  email     String   @unique @db.VarChar(60)
   password  String   @unique
   admin     Boolean  @default(false)
   createdAt DateTime @default(now())

@@ -4,8 +4,7 @@ import { UserEntity } from '../entities/user.entity';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { DatabaseError } from 'src/common/erros/types/DataBaseError';
-import { NotFoundError } from 'src/common/erros/types/NotFoundError';
-import { LoginEntity } from '../entities/login.entity';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsersRepository {
@@ -13,35 +12,23 @@ export class UsersRepository {
 
   async create(createUserDto: CreateUserDto): Promise<UserEntity> {
     try {
-      return await this.prisma.users.create({
-        data: createUserDto,
+      const data = {
+        ...createUserDto,
+        password: await bcrypt.hash(createUserDto.password, 12),
+      };
+
+      const createUser = await this.prisma.users.create({
+        data,
       });
+
+      return {
+        ...createUser,
+        password: undefined,
+      };
     } catch (error) {
       throw new DatabaseError('Falha ao criar o usuário.');
     }
   }
-
-  // async createUserAndSkills(
-  //   createUserDto: CreateUserDto,
-  //   skills: SkillEntity[],
-  // ): Promise<UserEntity> {
-  //   const transaction = await this.prisma.$transaction([
-  //     this.prisma.users.create({
-  //       data: createUserDto,
-  //     }),
-  //     ...skills.map((skill) =>
-  //       this.prisma.skills.create({
-  //         data: skill,
-  //       }),
-  //     ),
-  //   ]);
-
-  //   if (transaction[0] instanceof UserEntity) {
-  //     return transaction[0] as UserEntity;
-  //   } else {
-  //     throw new DatabaseError('Falha ao criar o usuário e as habilidades.');
-  //   }
-  // }
 
   async findAll(): Promise<UserEntity[]> {
     try {
@@ -89,20 +76,14 @@ export class UsersRepository {
   }
 
   /**
-   * Encontre um usuário por e-mail e senha
+   * Encontre um usuário por e-mail
    * @param email Email do usuário
-   * @param password Senha do usuário
    * @returns Retorna o usuário se encontrado, caso contrário, retorna null
    */
-  async findByEmailAndPassword(
-    email: string,
-    password: string,
-  ): Promise<LoginEntity | null> {
-    try {
-      const user = await this.findByEmailAndPassword(email, password);
-      return user;
-    } catch (error) {
-      throw new NotFoundError('Não localizado usuário ou senha');
-    }
+  async findByEmail(email: string) {
+    return this.prisma.users.findUnique({
+      where: { email: email }
+    });
   }
+  
 }

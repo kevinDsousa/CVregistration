@@ -52,7 +52,7 @@ export class UserService {
     return this.repository.remove(id);
   }
 
-  findByEmailAndPassword(email: string, password: string) {
-    return this.repository.findByEmailAndPassword(email, password);
+  findbyEmail(email: string) {
+    return this.repository.findByEmail(email);
   }
 }
