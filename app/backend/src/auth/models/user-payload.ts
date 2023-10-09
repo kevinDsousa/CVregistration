@@ -4,4 +4,5 @@ export interface UserPayLoad {
   name: string;
   iat?: number;
   exp?: number;
+  admin?: boolean;
 }

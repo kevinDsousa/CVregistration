@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable, delay, of, tap } from 'rxjs';
+import { BehaviorSubject, Observable, delay, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
@@ -13,27 +13,33 @@ export class AuthService {
 
   redirectUrl: string | null = null;
 
-  constructor(private snackbar: MatSnackBar, private http: HttpClient){}
+  constructor(private snackbar: MatSnackBar, private http: HttpClient) { }
 
   /**
    * Função modelo injectable que recebe uma mensagem e retornar um snackbar
    * @param msg Mensagem para passar via injectable
-   */
-  showMessage(msg: string): void {
-    this.snackbar.open(msg, 'X', {
-      duration: 3000,
-      horizontalPosition: 'right',
-      verticalPosition: 'top'
+  */
+ showMessage(msg: string): void {
+   this.snackbar.open(msg, 'X', {
+     duration: 3000,
+     horizontalPosition: 'right',
+     verticalPosition: 'top'
     })
   }
 
-  login(credencials: any) {
-    return this.http.post(`${this.BASEURL}/login`, credencials)
+  login(credentials: any) {
+    return this.http.post(`${this.BASEURL}/login`, credentials);
   }
 
-  logout(): void {
-    localStorage.removeItem("auth")
+  private loggedInUserSubject = new BehaviorSubject<string>('');
 
-    this.isLoggedIn = false
+  loggedInUser$ = this.loggedInUserSubject.asObservable();
+
+  setLoggedInUser(username: string) {
+    this.loggedInUserSubject.next(username);
+  }
+
+  logout() {
+    localStorage.removeItem('access_token');
   }
 }

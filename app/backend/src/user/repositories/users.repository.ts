@@ -82,8 +82,7 @@ export class UsersRepository {
    */
   async findByEmail(email: string) {
     return this.prisma.users.findUnique({
-      where: { email: email }
+      where: { email: email },
     });
   }
-  
 }

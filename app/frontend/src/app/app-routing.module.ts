@@ -14,9 +14,9 @@ import { NewuserComponent } from './components/user/newuser/newuser.component';
 import { DeleteuserComponent } from './components/user/deleteuser/deleteuser.component';
 import { NewcvComponent } from './components/cv/newcv/newcv.component';
 import { PagenotfoundComponent } from './views/pagenotfound/pagenotfound.component';
-
+import { AuthGuard } from './auth/auth.guard';
 const routes: Routes = [
-  { path: "", component: HomeComponent },
+  { path: "", component: HomeComponent, canActivate: [AuthGuard]  },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "user", component: DashboardComponent },

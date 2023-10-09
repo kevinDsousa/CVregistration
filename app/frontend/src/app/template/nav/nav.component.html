@@ -1,6 +1,9 @@
 <mat-sidenav-container>
   <mat-sidenav class="sidenav mat-elevation-z4" mode="side" opened fixedInViewport="true">
     <mat-nav-list class="linksmenu nav-list">
+      <a class="img" mat-list-item routerLink="/dashboard">
+        <img *ngIf="imageUrl" [src]="imageUrl" alt="Imagem do perfil">
+      </a>
       <a mat-list-item routerLink="/dashboard">
         <i class="material-icons">
           dashboard
@@ -19,7 +22,7 @@
         </i>
         <span>usuários</span>
       </a>
-      <a mat-list-item routerLink="/">
+      <a mat-list-item (click)="logout()">
         <i class="material-icons">
           logout
         </i>

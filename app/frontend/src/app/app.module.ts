@@ -47,6 +47,7 @@ import { UsercrudComponent } from './template/usercrud/usercrud.component';
 import { CvcrudComponent } from './template/cvcrud/cvcrud.component';
 import { PagenotfoundComponent } from './views/pagenotfound/pagenotfound.component';
 import { HttpModule } from './module/http/http.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { HttpModule } from './module/http/http.module';
     MatNativeDateModule,
     MatCheckboxModule,
     HttpModule,
+    RouterModule.forRoot([]),
     CarouselModule.forRoot(),
   ],
   providers: [{ provide: NgChartsConfiguration, useValue: { generateColors: false }}],

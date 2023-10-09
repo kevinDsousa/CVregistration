@@ -75,6 +75,7 @@ export class UserController {
   })
   @Get()
   @HttpCode(HttpStatus.OK)
+  @IsPublic()
   findAll() {
     return this.userService.findAll();
   }
@@ -101,6 +102,7 @@ export class UserController {
     description: 'O servidor encontrou um erro inesperado.',
   })
   @Get(':id')
+  @IsPublic()
   @HttpCode(HttpStatus.OK)
   findOne(@Param('id') id: string) {
     return this.userService.findOne(+id);
@@ -129,6 +131,7 @@ export class UserController {
     description: 'O servidor encontrou um erro inesperado.',
   })
   @Patch(':id')
+  @IsPublic()
   @HttpCode(HttpStatus.OK)
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(+id, updateUserDto);
@@ -155,6 +158,7 @@ export class UserController {
     status: 500,
     description: 'O servidor encontrou um erro inesperado.',
   })
+  @IsPublic()
   @HttpCode(HttpStatus.OK)
   @Delete(':id')
   remove(@Param('id') id: string) {

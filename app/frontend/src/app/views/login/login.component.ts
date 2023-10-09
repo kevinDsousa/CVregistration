@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private userService: UsersService,
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -53,10 +52,15 @@ export class LoginComponent implements OnInit {
   acessar() {
     if (this.loginForm.valid) {
       this.credentials = this.loginForm.value as LoginModel;
-        this.http.post<any>(`${this.BASEURL}/login`, this.credentials)
+      this.http.post<any>(`${this.BASEURL}/login`, this.credentials)
         .subscribe(
           response => {
-            this.router.navigate(['dashboard']);
+            if (response.access_token) {
+              localStorage.setItem('token', response.access_token);
+              this.router.navigate(['dashboard']);
+            } else {
+              this.authService.showMessage('Token de acesso não encontrado na resposta.');
+            }
           },
           error => {
             this.authService.showMessage('Erro ao autenticar: ' + error.message);
@@ -64,5 +68,4 @@ export class LoginComponent implements OnInit {
         );
     }
   }
-
 }

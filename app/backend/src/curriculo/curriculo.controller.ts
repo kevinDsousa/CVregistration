@@ -12,6 +12,7 @@ import { CreateCurriculoDto } from './dto/create-curriculo.dto';
 import { UpdateCurriculoDto } from './dto/update-curriculo.dto';
 import { ApiCreatedResponse, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CurriculoModule } from './curriculo.module';
+import { IsPublic } from 'src/auth/decorators/is-public.decorator';
 
 @ApiTags('curriculo')
 @Controller('curriculo')
@@ -43,6 +44,7 @@ export class CurriculoController {
     status: 500,
     description: 'O servidor encontrou um erro inesperado.',
   })
+  @IsPublic()
   @Post()
   create(@Body() createCurriculoDto: CreateCurriculoDto) {
     return this.curriculoService.create(createCurriculoDto);
@@ -68,6 +70,7 @@ export class CurriculoController {
     status: 500,
     description: 'O servidor encontrou um erro inesperado.',
   })
+  @IsPublic()
   @Get()
   findAll() {
     return this.curriculoService.findAll();
@@ -94,6 +97,7 @@ export class CurriculoController {
     status: 500,
     description: 'O servidor encontrou um erro inesperado.',
   })
+  @IsPublic()
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.curriculoService.findOne(+id);
@@ -122,6 +126,7 @@ export class CurriculoController {
     description: 'O servidor encontrou um erro inesperado.',
   })
   @Patch(':id')
+  @IsPublic()
   update(
     @Param('id') id: string,
     @Body() updateCurriculoDto: UpdateCurriculoDto,
@@ -150,6 +155,7 @@ export class CurriculoController {
     status: 500,
     description: 'O servidor encontrou um erro inesperado.',
   })
+  @IsPublic()
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.curriculoService.remove(+id);

@@ -8,6 +8,16 @@
   padding-right: 1rem;
 }
 
+.linksmenu {
+  position: relative;
+}
+
+.linksmenu img {
+  border-radius: 60px;
+  width: 40px;
+  margin-left: 40px;
+}
+
 .nav-list span {
   color: white;
   line-height: 40px;
