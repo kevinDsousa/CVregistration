@@ -15,11 +15,13 @@ import { DeleteuserComponent } from './components/user/deleteuser/deleteuser.com
 import { NewcvComponent } from './components/cv/newcv/newcv.component';
 import { PagenotfoundComponent } from './views/pagenotfound/pagenotfound.component';
 import { AuthGuard } from './auth/auth.guard';
+import { UserComponent } from './views/user/user.component';
+
 const routes: Routes = [
   { path: "", component: HomeComponent, canActivate: [AuthGuard]  },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "user", component: DashboardComponent },
+  { path: "user", component: UserComponent },
   { path: "readcv", component:  CvcrudComponent},
   { path: "readcv/update/:id", component:  UpdatecvComponent},
   { path: "readcv/delete/:id", component:  DeletecvComponent},

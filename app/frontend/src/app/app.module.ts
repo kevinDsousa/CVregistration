@@ -48,6 +48,7 @@ import { CvcrudComponent } from './template/cvcrud/cvcrud.component';
 import { PagenotfoundComponent } from './views/pagenotfound/pagenotfound.component';
 import { HttpModule } from './module/http/http.module';
 import { RouterModule } from '@angular/router';
+import { UserComponent } from './views/user/user.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { RouterModule } from '@angular/router';
     UsercrudComponent,
     CvcrudComponent,
     PagenotfoundComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
