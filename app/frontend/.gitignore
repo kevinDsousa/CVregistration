@@ -7,7 +7,7 @@ environments
 /tmp
 /out-tsc
 /bazel-out
-
+.turbo
 # Node
 /node_modules
 npm-debug.log

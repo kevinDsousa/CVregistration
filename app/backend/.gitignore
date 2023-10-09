@@ -3,6 +3,7 @@
 /node_modules
 .env
 
+.turbo
 # Logs
 logs
 *.log
