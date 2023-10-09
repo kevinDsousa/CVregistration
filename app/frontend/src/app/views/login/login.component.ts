@@ -57,7 +57,11 @@ export class LoginComponent implements OnInit {
           response => {
             if (response.access_token) {
               localStorage.setItem('token', response.access_token);
-              this.router.navigate(['dashboard']);
+              if (response.admin) {
+                this.router.navigate(['dashboard']);
+              } else {
+                this.router.navigate(['user']);
+              }
             } else {
               this.authService.showMessage('Token de acesso não encontrado na resposta.');
             }
@@ -68,4 +72,5 @@ export class LoginComponent implements OnInit {
         );
     }
   }
+
 }

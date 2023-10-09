@@ -21,7 +21,7 @@
         <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">Senha deve ter no mínimo 6 caracteres</mat-error>
       </mat-form-field>
       <mat-checkbox formControlName="admin">Admin</mat-checkbox>
-      <button type="submit" [disabled]="registerForm.invalid">Cadastrar</button>
+      <button type="submit" [disabled]="registerForm.invalid">Salvar</button>
     </form>
     <div class="links">
       <a routerLink="/">Voltar</a>

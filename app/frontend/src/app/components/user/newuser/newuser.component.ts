@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class NewuserComponent implements OnInit {
   registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private userService: UsersService) {
+  constructor(private formBuilder: FormBuilder, private userService: UsersService, private router: Router) {
     this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -29,6 +30,7 @@ export class NewuserComponent implements OnInit {
       this.userService.create(userData).subscribe(
         (response: any) => {
           this.userService.showMessage('Novo usuário criado com sucesso.');
+          this.router.navigate(['/readuser']);
         },
         (error: any) => {
           console.error('Erro ao criar o usuário:', error);
